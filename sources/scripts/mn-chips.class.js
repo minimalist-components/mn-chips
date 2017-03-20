@@ -11,7 +11,8 @@ class MnChips extends window.MnInput {
   }
 
   addChip(value, placeholder) {
-    if (value) {
+    const valueAlreadyUsed = this.value.indexOf(value) > -1
+    if (value && !valueAlreadyUsed) {
       placeholder = placeholder
         ? `placeholder=${placeholder}`
         : ''
