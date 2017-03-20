@@ -20,10 +20,13 @@ class MnChips extends window.MnInput {
         class="natural"
         value="${value}"
         name="${this.name}"
-        checked="checked"
         ${placeholder}
       >`
       this.chips.insertAdjacentHTML('beforeend', option)
+      const lastOption = this.chips.querySelector('mn-option:last-child')
+      setTimeout(() => {
+        lastOption.checked = true
+      }, 0)
       this.input.value = ''
     }
   }
