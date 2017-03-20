@@ -1,6 +1,6 @@
 # mn-chips
 
-Minimalist component to define items
+Minimalist component to define a list of items
 
 <!-- See the [demo](https://minimalist-components.github.io/mn-chips/) -->
 

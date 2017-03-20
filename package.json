@@ -2,7 +2,7 @@
   "name": "mn-chips",
   "private": true,
   "version": "0.0.1",
-  "description": "Minimalist component to define items",
+  "description": "Minimalist component to define a list of items",
   "scripts": {
     "start": "scripts/start.sh",
     "bundle": "scripts/bundle.sh",
