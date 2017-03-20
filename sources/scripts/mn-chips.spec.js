@@ -17,7 +17,24 @@ fixture `mn-chips`
     pageObject = new MnChipsPageObject(page)
   })
 
-  test('names.value return an array empty', async page => {
+  test('getter value with undefined value', async page => {
     const names = pageObject.get('names')
     await expect(names.value).to.be.eventually.an('array').lengthOf(0)
+  })
+
+  test('getter value with defined value', async page => {
+    const houses = pageObject.get('houses')
+    await expect(houses.value).to.deep.eventually.equal(['test', 'master'])
+  })
+
+  test.skip('setter value with a single primitive value', async page => {
+    const houses = pageObject.get('houses')
+    houses.value = 'lannister'
+    await expect(houses.value).to.deep.eventually.equal(['lannister'])
+  })
+
+  test.skip('setter value with an array', async page => {
+    const houses = pageObject.get('houses')
+    houses.value = ['lannister', 'stark']
+    await expect(houses.value).to.deep.eventually.equal(['lannister', 'stark'])
   })

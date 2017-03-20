@@ -7,6 +7,7 @@ function PageObject(page) {
     get,
   }
 
+
   function get(name) {
     const option = querySelector(`mn-chips[name="${name}"]`)
     return option
