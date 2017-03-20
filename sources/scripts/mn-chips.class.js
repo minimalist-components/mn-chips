@@ -46,10 +46,10 @@ class MnChips extends window.MnInput {
   }
 
   setAddEvents() {
-    this.input.addEventListener('blur', () => {
-      this.addChip(this.input.value)
-      this.classList.remove('has-value')
-    })
+    // this.input.addEventListener('blur', () => {
+    //   this.addChip(this.input.value)
+    //   this.classList.remove('has-value')
+    // })
 
     this.input.addEventListener('keydown', event => {
       const enterKeys = [
@@ -68,12 +68,18 @@ class MnChips extends window.MnInput {
   }
 
   set value(values) {
-    values = Array.isArray(values)
-      ? values
-      : [values]
+    const valueAlreadyUsed = this.value.indexOf(values) > -1
 
-    this.chips.innerHTML = ''
-    values.forEach(value => this.addChip(value))
+    if (values && !valueAlreadyUsed) {
+      values = Array.isArray(values)
+        ? values
+        : [values]
+
+      this.chips.innerHTML = ''
+      values.forEach(value => this.addChip(value))
+    } else {
+      this.input.value = ''
+    }
   }
 
   get value() {
