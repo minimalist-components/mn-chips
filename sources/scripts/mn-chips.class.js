@@ -5,9 +5,7 @@ class MnChips extends window.MnInput {
     this.name = this.getAttribute('name')
     this.setAddEvents()
 
-    this.chips = document.createElement('div')
-    this.chips.classList.add('values')
-    this.appendChild(this.chips)
+    this.setValue()
 
     return self
   }
@@ -28,6 +26,19 @@ class MnChips extends window.MnInput {
       this.chips.insertAdjacentHTML('beforeend', option)
       this.input.value = ''
     }
+  }
+
+  setValue() {
+    this.chips = document.createElement('div')
+    this.chips.classList.add('values')
+    this.appendChild(this.chips)
+
+    const options = Array.from(this.querySelectorAll('option'))
+    options.forEach(option => {
+      this.removeChild(option)
+      this.addChip(option.value, option.textContent)
+    })
+
   }
 
   setAddEvents() {
