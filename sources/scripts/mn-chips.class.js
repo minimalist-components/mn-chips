@@ -12,9 +12,19 @@ class MnChips extends window.MnInput {
     return self
   }
 
-  addChip(value) {
+  addChip(value, placeholder) {
     if (value) {
-      const option = `<mn-option class="natural" value="${value}" name="${this.name}" checked="checked">`
+      placeholder = placeholder
+        ? `placeholder=${placeholder}`
+        : ''
+
+      const option = `<mn-option
+        class="natural"
+        value="${value}"
+        name="${this.name}"
+        checked="checked"
+        ${placeholder}
+      >`
       this.chips.insertAdjacentHTML('beforeend', option)
       this.input.value = ''
     }
