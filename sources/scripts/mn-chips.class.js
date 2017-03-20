@@ -51,6 +51,22 @@ class MnChips extends window.MnInput {
       }
     })
   }
+
+  set value(values) {
+    values = Array.isArray(values)
+      ? values
+      : [values]
+
+    this.chips.innerHTML = ''
+    values.forEach(value => this.addChip(value))
+  }
+
+  get value() {
+    const options = this.querySelector('mn-option')
+    return options
+      ? options.value
+      : []
+  }
 }
 
 window.customElements.define('mn-chips', MnChips)
