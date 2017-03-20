@@ -53,6 +53,7 @@
   "dependencies": {
     "document-register-element": "^1.4.1",
     "mn-input": "0.0.7",
+    "mn-option": "0.0.16",
     "open-color": "^1.5.1"
   }
 }

@@ -1,0 +1,13 @@
+mn-chips .values {
+  min-height: 2px;
+  box-shadow: 0 -1px 0 #ced4da;
+  position: relative;
+  top: 1px;
+  padding: .5em 0;
+  transition: box-shadow .2s ease;
+  font-size: .8em;
+}
+
+mn-chips.focused .values {
+  box-shadow: 0 -2px 0 #343a40;
+}

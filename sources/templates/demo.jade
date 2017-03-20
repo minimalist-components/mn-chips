@@ -25,13 +25,17 @@ body
 
   .mn-layout-fullscreen.mn-layout-centered
     .mn-layout-container
-      form.mn-layout-column.mn-layout-sm-row
-        mn-chips.flex(placeholder='Houses')
+      form.mn-layout-column
+        mn-chips.flex(placeholder='Houses' name='houses')
+      
+        mn-chips.flex(placeholder='Names' name='names')
+
+        //- mn-option.natural(value="${value}")
   
   .docs.mn-layout-container
     mn-code.sh.
-      # not available ye, working in progress
-      bower install --save mn-chips
+      # not available yet, working in progress
+      npm install --save mn-chips
 
     p Or just download the main files, located in dist/
 
