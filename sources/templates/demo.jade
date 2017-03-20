@@ -1,0 +1,49 @@
+html
+  meta(name='viewport' content='width=device-width, user-scalable=no')
+
+
+  block styles
+    link(rel='stylesheet' href='docs/vendor.css')
+    link(rel='stylesheet' href='dist/mn-chips.css')
+
+  style.
+    mn-chips {
+      font-size: 1.2rem;
+    }
+
+    form {width: 100%}
+
+    @media (min-width: 600px) {
+      form {
+        padding: 100px;
+        box-sizing: border-box;
+      }
+    }
+body
+  h2 mn-chips
+  include github-corner
+
+  .mn-layout-fullscreen.mn-layout-centered
+    .mn-layout-container
+      form.mn-layout-column.mn-layout-sm-row
+        mn-chips.flex(placeholder='Houses')
+  
+  .docs.mn-layout-container
+    mn-code.sh.
+      # not available ye, working in progress
+      bower install --save mn-chips
+
+    p Or just download the main files, located in dist/
+
+    h3 usage
+    p just use the tag <strong>mn-chips</strong>, e.g.
+    mn-code.html.
+      <mn-chips placeholder='Type a value'>
+  
+  block scripts
+    script(src='docs/vendor.js')
+    script(src='dist/mn-chips.js')
+
+  script.
+    var chips = document.querySelector('mn-chips')
+
