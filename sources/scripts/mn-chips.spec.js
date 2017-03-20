@@ -3,20 +3,21 @@ import {expect} from 'chai'
 import chaiAsPromised from 'chai-as-promised'
 import chaiDom from 'chai-dom'
 import MnChipsPageObject from './mn-chips.po.js'
+import {Selector as querySelector} from 'testcafe'
 
 chai
   .use(chaiDom)
   .use(chaiAsPromised)
 
-let chips
+let pageObject
 
-fixture `chips`
+fixture `mn-chips`
   .page('http://localhost:8080/docs/demo.html')
   .beforeEach(page => {
-    chips = new MnChipsPageObject(page)
+    pageObject = new MnChipsPageObject(page)
   })
 
-  test('test', () => {
-    console.log(chips)
-    expect(true).to.be.true
+  test('names.value return an array empty', async page => {
+    const names = pageObject.get('names')
+    await expect(names.value).to.be.eventually.an('array').lengthOf(0)
   })

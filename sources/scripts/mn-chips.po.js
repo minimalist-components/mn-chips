@@ -2,10 +2,13 @@ import {Selector as querySelector} from 'testcafe'
 
 module.exports = PageObject
 
-function PageObject() {
-  const chips = querySelector('mn-chips')
-
+function PageObject(page) {
   return {
-    chips,
+    get,
+  }
+
+  function get(name) {
+    const option = querySelector(`mn-chips[name="${name}"]`)
+    return option
   }
 }
