@@ -46,10 +46,11 @@ class MnChips extends window.MnInput {
   }
 
   setAddEvents() {
-    // this.input.addEventListener('blur', () => {
-    //   this.addChip(this.input.value)
-    //   this.classList.remove('has-value')
-    // })
+    this.input.addEventListener('blur', () => {
+      this.addChip(this.input.value)
+      this.classList.remove('has-value')
+      this.input.value = ''
+    })
 
     this.input.addEventListener('keydown', event => {
       const enterKeys = [
