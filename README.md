@@ -9,7 +9,6 @@ Minimalist component to define a list of items
 ### Install
 
 ```sh
-# not available yet, working in progress
 npm install --save mn-chips
 ```
 
