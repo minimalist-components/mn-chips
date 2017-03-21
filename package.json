@@ -1,6 +1,6 @@
 {
   "name": "mn-chips",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Minimalist component to define a list of items",
   "main": "dist/angular-mn-chips.js",
   "files": [

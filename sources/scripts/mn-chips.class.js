@@ -29,6 +29,7 @@ class MnChips extends window.MnInput {
         lastOption.checked = true
       }, 0)
       this.input.value = ''
+      this.dispatchChangeEvent()
     }
   }
 
@@ -43,6 +44,7 @@ class MnChips extends window.MnInput {
       this.addChip(option.value, option.textContent)
     })
 
+    this.dispatchChangeEvent()
   }
 
   setAddEvents() {
@@ -66,6 +68,11 @@ class MnChips extends window.MnInput {
         event.preventDefault()
       }
     })
+  }
+
+  dispatchChangeEvent() {
+    const event = new Event('change')
+    this.dispatchEvent(event)
   }
 
   set value(values) {
