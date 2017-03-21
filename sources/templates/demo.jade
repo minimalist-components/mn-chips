@@ -40,9 +40,11 @@ body
     p Or just download the main files, located in dist/
 
     h3 usage
-    p just use the tag <strong>mn-chips</strong>, e.g.
+    p just use the tag <strong>mn-chips</strong>, and values with a inner tag <strong>option</strong>, e.g.
     mn-code.html.
-      <mn-chips placeholder='Type a value'>
+      <mn-chips placeholder='Houses'>
+        <option value="test">Test</option>
+        <option value="master">Master</option>
   
   block scripts
     script(src='/docs/vendor.js')

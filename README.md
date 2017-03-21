@@ -17,8 +17,11 @@ Or just download the main files, located in [dist/](https://github.com/minimalis
 
 ### Usage
 
-And then, in your html, you can use the tag `mn-chips` i.e.
+And then, in your html, use the tag `mn-chips`, and values with a inner tag `option`, e.g
 
 ```html
-<mn-chips placeholder="Username"></mn-chips>
+<mn-chips placeholder='Houses'>
+  <option value="test">Test</option>
+  <option value="master">Master</option>
+</mn-chips>
 ```
