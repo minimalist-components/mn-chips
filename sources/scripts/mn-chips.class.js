@@ -1,6 +1,7 @@
 class MnChips extends window.MnInput {
   constructor(self) {
     self = super(self)
+    this.classList.add('mn-chips')
     this.input = this.querySelector('input')
     this.name = this.getAttribute('name')
     this.setAddEvents()

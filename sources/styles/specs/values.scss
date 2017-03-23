@@ -1,4 +1,4 @@
-mn-chips .values {
+.mn-chips .values {
   min-height: 2px;
   box-shadow: 0 -1px 0 #ced4da;
   position: relative;
@@ -8,6 +8,6 @@ mn-chips .values {
   font-size: .8em;
 }
 
-mn-chips.focused .values {
+.mn-chips.focused .values {
   box-shadow: 0 -2px 0 #343a40;
 }
