@@ -53,7 +53,12 @@ class MnChips extends window.MnInput {
 
   setAddEvents() {
     this.input.addEventListener('blur', () => {
-      this.addChip(this.input.value)
+      const values = this.input.value
+          .trim()
+          .replace(/[\s,]{1,}/, ' ')
+          .split(/\s/)
+
+      values.forEach(value => this.addChip(value))
       this.classList.remove('has-value')
       this.input.value = ''
     })
@@ -68,7 +73,12 @@ class MnChips extends window.MnInput {
       const isEnterKey = enterKeys.indexOf(event.key) > -1
 
       if (isEnterKey) {
-        this.addChip(this.input.value)
+        const values = this.input.value
+          .trim()
+          .replace(/[\s,]{1,}/, ' ')
+          .split(/\s/)
+
+        values.forEach(value => this.addChip(value))
         event.preventDefault()
       }
     })
