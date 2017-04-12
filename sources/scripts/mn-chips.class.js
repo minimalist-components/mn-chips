@@ -12,16 +12,20 @@ class MnChips extends window.MnInput {
   }
 
   addChip(value, placeholder) {
+    value = typeof this.transformValue === 'function'
+      ? this.transformValue(value)
+      : value
+
+    placeholder = typeof this.transformPlaceholder === 'function'
+      ? this.transformPlaceholder(placeholder)
+      : placeholder
+
     const valueAlreadyUsed = this.value.indexOf(value) > -1
     const validateChip = typeof this.validateChip === 'function'
       ? this.validateChip(value)
       : true
 
     if (value && !valueAlreadyUsed && validateChip) {
-      value = typeof this.transformValue === 'function'
-        ? this.transformValue(value)
-        : value
-
       placeholder = placeholder
         ? `placeholder=${placeholder}`
         : ''
