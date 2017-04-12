@@ -16,7 +16,12 @@ class MnChips extends window.MnInput {
     const validateChip = typeof this.validateChip === 'function'
       ? this.validateChip(value)
       : true
+
     if (value && !valueAlreadyUsed && validateChip) {
+      value = typeof this.transformValue === 'function'
+        ? this.transformValue(value)
+        : value
+
       placeholder = placeholder
         ? `placeholder=${placeholder}`
         : ''
@@ -56,7 +61,7 @@ class MnChips extends window.MnInput {
       const values = this.input.value
           .trim()
           .replace(/[\s,]{1,}/, ' ')
-          .split(/\s/)
+          .split(' ')
 
       values.forEach(value => this.addChip(value))
       this.classList.remove('has-value')
@@ -76,7 +81,7 @@ class MnChips extends window.MnInput {
         const values = this.input.value
           .trim()
           .replace(/[\s,]{1,}/, ' ')
-          .split(/\s/)
+          .split(' ')
 
         values.forEach(value => this.addChip(value))
         event.preventDefault()
