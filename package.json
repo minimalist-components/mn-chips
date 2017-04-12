@@ -1,6 +1,6 @@
 {
   "name": "mn-chips",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "Minimalist component to define a list of items",
   "main": "dist/angular-mn-chips.js",
   "files": [
@@ -19,6 +19,10 @@
     "minimalist"
   ],
   "author": "Darlan Mendonça <darlanmendonca@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/minimalist-components/mn-chips.git"
+  },
   "license": "MIT",
   "devDependencies": {
     "babel-preset-es2015": "^6.14.0",

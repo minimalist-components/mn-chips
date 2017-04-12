@@ -1,3 +1,7 @@
+[![npm version](https://badge.fury.io/js/mn-chips.svg)](https://badge.fury.io/js/mn-chips)
+[![Dependency Status](https://gemnasium.com/badges/github.com/minimalist-components/mn-chips.svg)](https://gemnasium.com/github.com/minimalist-components/mn-chips)
+[![MIT Licence](https://badges.frapsoft.com/os/mit/mit.svg?v=103)](https://opensource.org/licenses/mit-license.php)
+
 # mn-chips
 
 Minimalist component to define a list of items
